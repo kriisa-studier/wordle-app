@@ -1,0 +1,19 @@
+{
+  "name": "fullstack",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "build:client": "npm --workspace=client run build",
+    "build:server": "npm --workspace=server run build",
+    "build": "npm run build:client && npm run build:server",
+    "start:server": "npm --workspace=server run start",
+    "start": "npm run build:client && npm run start:server",
+    "install:all": "npm install --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
